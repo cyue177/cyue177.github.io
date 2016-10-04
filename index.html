@@ -347,10 +347,16 @@
 <p>检查是否可以连接</p>
 <h2 id="建立页面"><a href="#建立页面" class="headerlink" title="建立页面"></a>建立页面</h2><h3 id="一些简单的命令"><a href="#一些简单的命令" class="headerlink" title="一些简单的命令"></a>一些简单的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo new page pagename #建立新页面</div><div class="line">hexo new &quot;name&quot; #建立新文章</div><div class="line">hexo g #生成静态页面至public</div><div class="line">hexo d #部署到github</div><div class="line">hexo help #查看帮助</div></pre></td></tr></table></figure>
 <p>每次重新布置后记得使用<code>hexo clean</code>清除缓存。</p>
-<h3 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h3><p>我的博客使用的是<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">next</a>主题,可以前往它的官网，有很详细的使用说明。</p>
+<h3 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h3><p>布置的时候修改根目录下的配置文件中，将theme参数修改为themes文件中对应的主题就好，（最好提前备份配置文件）。</p>
+<p>我的博客使用的是<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">next</a>主题,可以前往它的官网，有很详细的使用说明。</p>
 <h1 id="遇到的一些问题及其解决方法"><a href="#遇到的一些问题及其解决方法" class="headerlink" title="遇到的一些问题及其解决方法"></a>遇到的一些问题及其解决方法</h1><ul>
 <li>同时在两个窗口中输入<code>hexo server</code>，显示端口已经被使用，解决方法：重新分配一个窗口,例如：<code>hexo server -p 5000</code></li>
-<li></li>
+<li>在标签更新的时候，因为没有及时clean的原因，标签数量显示出现了问题。</li>
+<li>在文件部署中，要注意每个冒号后面都要留空格，否则会出现错误。</li>
+</ul>
+<h1 id="后续可增加的内容"><a href="#后续可增加的内容" class="headerlink" title="后续可增加的内容"></a>后续可增加的内容</h1><ul>
+<li>访客统计功能</li>
+<li>关于中音乐播放器的设置<br>…</li>
 </ul>
 <p>参考文章：<br><a href="http://m.blog.csdn.net/article/details?id=51577815" target="_blank" rel="external">基于next主题</a></p>
 
