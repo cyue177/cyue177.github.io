@@ -318,9 +318,18 @@
 
       
         
-          
-            
-          
+          <h2 id="unity3d界面了解"><a href="#unity3d界面了解" class="headerlink" title="unity3d界面了解"></a>unity3d界面了解</h2><h4 id="Hierarchy-层次视图"><a href="#Hierarchy-层次视图" class="headerlink" title="Hierarchy 层次视图"></a>Hierarchy 层次视图</h4><p>包含每一个当前场景所有游戏对象，其中一些是资源文件的实例，如3D模型和其他预制物体（Prefab）的实例。您可以在层次结构视图中选择对象或者生成对象。当在场景中增加或者删除对象，层次结构视图中相应的对象则会出现或消失。 </p>
+<h4 id="Scene-View-场景视图"><a href="#Scene-View-场景视图" class="headerlink" title="Scene View 场景视图"></a>Scene View 场景视图</h4><p>场景视图（Scene View）是交互式沙盒，可以使用它来选择和布置环境、玩家、摄像机、敌人和所有其他游戏对象。</p>
+<h4 id="Project-工程视图"><a href="#Project-工程视图" class="headerlink" title="Project 工程视图"></a>Project 工程视图</h4><p>每个Unity的项目包含一个资源文件夹。此文件夹的内容呈现在项目视图。这里存放着你游戏的所有资源，比如场景、脚本、三维模型、纹理、音频文件和预制组件。如果你在项目视图里右击任何资源，你都可以在资源管理器中（在Mac系统中是Reveal in Finder）找到这些真正的文件本身。</p>
+<h4 id="Inspector检视面板"><a href="#Inspector检视面板" class="headerlink" title="Inspector检视面板"></a>Inspector检视面板</h4><p>显示当前当前选定的游戏对象的所有附加组件(脚本属于组件)及其属性的相关详细信息。</p>
+<h4 id="一些视图等"><a href="#一些视图等" class="headerlink" title="一些视图等"></a>一些视图等</h4><p>如gameview视图，可以用来观察运行状态等情况。</p>
+<blockquote>
+<p>可参考<a href="http://www.cnblogs.com/fortomorrow/archive/2012/10/29/unity01.html">unity3d界面功能操作详解</a><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/28/unity3d实现人物的简单控制/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -418,29 +427,13 @@
 
       
         
-          
-            <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="python安装"><a href="#python安装" class="headerlink" title="python安装"></a>python安装</h2><p>我选择的是python2.7，这个版本目前还是比较主流的，首先前往python的官网，选择相应的版本下载到本地，安装时，选择添加路径到path和安装pip。打开命令符输入<code>python</code>进行验证，如果当出现版本号等信息时，表示添加成功。否则，可以手动添加路径。</p>
-<h2 id="相关包的安装"><a href="#相关包的安装" class="headerlink" title="相关包的安装"></a>相关包的安装</h2><p>前面在安装python时已经安装好了pip,这对于接下来一些包的安装很有用处，在命令符格式下输入<code>pip install xlwt``pip install beautiful4</code>的命令来进行安装。需要安装的包有<code>beautifulsoup</code>,<code>xlwt</code>，<code>xlrd</code>，<code>selenium</code>，安装完成后可以输入<code>pip freeze</code>来查看</p>
-<h2 id="pydev的安装"><a href="#pydev的安装" class="headerlink" title="pydev的安装"></a>pydev的安装</h2><p>可以在下载好之后引入，也可在eclipse中直接寻找拓展。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</p>
-<h1 id="内容编写"><a href="#内容编写" class="headerlink" title="内容编写"></a>内容编写</h1><h3 id="webdriver选取内容"><a href="#webdriver选取内容" class="headerlink" title="webdriver选取内容"></a>webdriver选取内容</h3><p>webdriver模拟登陆的浏览器使用了firefox,界面可见，所以更好观察页面的情况。<br><br>信息的抓取分为单个标签的抓取和标签组的抓取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">browser.find_element_by_tag_name(tagname)</div><div class="line">browser.find_element_by_name(name)</div><div class="line">browser.find_element_by_id(&apos;id&apos;)</div><div class="line">browser.find_element_by_link_text(&apos;text&apos;)//选择带有链接标签中的内容</div><div class="line">browser.find_element_by_xpath(&apos;path&apos;)//绝对路径查找，弊端在于当页面改变</div><div class="line">时，标签可能找不到内容所在。</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>标签组的选取则只需要将单个标签中的element改为elements，得到的结果为一个List.<br><br>选到的elment可以通过数组的方式一一提取出来。</p>
-<p>网页源代码的提取可以通过<code>browser.page_source</code>得到</p>
-<h3 id="baeutifulsoup提取页面内容"><a href="#baeutifulsoup提取页面内容" class="headerlink" title="baeutifulsoup提取页面内容"></a>baeutifulsoup提取页面内容</h3><p>创建baeutifulsoup的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">soup=BeautifulSoup(html)</div></pre></td></tr></table></figure></p>
-<p>soup中对象的提取可以通过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">soup.find_all()</div><div class="line">soup.find(name)</div><div class="line">soup.string</div><div class="line">soup.get_text()//得到标签中的文本内容。</div></pre></td></tr></table></figure></p>
-<h4 id="网页分析器"><a href="#网页分析器" class="headerlink" title="网页分析器"></a>网页分析器</h4><p>常用的有<code>html5lib</code>,<code>lxml</code>等，lxml需要安装c语言库，同时虚度比较快，html5lib容错性较高，但是相对的速度比较慢。</p>
-<h3 id="time"><a href="#time" class="headerlink" title="time"></a>time</h3><p>time.sleep(sec)<br>用于页面之间的短暂停顿，因为当click时间进行的太快时，页面来不及反应，会中途停止。所以要预留反应时间</p>
-<h3 id="select的选取"><a href="#select的选取" class="headerlink" title="select的选取"></a>select的选取</h3><p>根据遍历的方法，遍历标签中的option<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">selects= browser.find_elements_by_tag_name(&apos;select&apos;)</div><div class="line">for select in selects: </div><div class="line">    if select.get_attribute(&apos;name&apos;)==&apos;xn&apos;:</div><div class="line">        for option in select.find_elements_by_tag_name(&apos;option&apos;):</div><div class="line">            if &apos;2015-2016&apos; in option.text:</div><div class="line">                option.click()</div><div class="line">                break</div><div class="line">        break</div></pre></td></tr></table></figure></p>
-<h3 id="表格的读写"><a href="#表格的读写" class="headerlink" title="表格的读写"></a>表格的读写</h3><h4 id="xlwt"><a href="#xlwt" class="headerlink" title="xlwt"></a>xlwt</h4><p><code>import xlwt</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">workbook=xlwt.open_workbook(filename)</div><div class="line">sheet = workbook.add_sheet(&apos;sheet1&apos;,cell_overwrite_ok=True)//后一个属性的意思为当重名时可覆盖。</div><div class="line">sheet.write(x,y,&apos;info&apos;)//坐标从(0,0)开始</div><div class="line">workbook.save(&apos;a.xls&apos;)//保存文件</div></pre></td></tr></table></figure></p>
-<h4 id="xlrd"><a href="#xlrd" class="headerlink" title="xlrd"></a>xlrd</h4><p><code>xlrd</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">workbook=xlrd.open_workbook(&apos;a.xls&apos;)//打开文件</div><div class="line">table=workbook.sheet_by_name(&apos;sheet1&apos;)//读取sheet</div><div class="line">table.nrows//读取表格的行数</div><div class="line">table.ncols//读取表格的列数</div><div class="line">table.row(i)[j].value//读取i-1,j-1的数据</div></pre></td></tr></table></figure></p>
-<p>读取出的数据为Unicode编码，如需计算需要强制类型转化后实现。</p>
-<h1 id="反思与总结"><a href="#反思与总结" class="headerlink" title="反思与总结"></a>反思与总结</h1><blockquote>
-<p>读取表格中的数字进行运算时，会出现错误，提示提取出的数字为Unicode编码，无法与int型进行相加，这是可以使用强制类型转化，用float括起来。<br><br>输入表格的中文要进行Unicode编码转化，网页中的则不需要。因为网页解析器提取出的字符自动转化。转化方式如workbook.write(u’string’)<br><br>在试验中，我觉得最重要的是找到一个正确的方向，使用正确的工具实现相应的一些功能。<br></p>
-</blockquote>
-<h1 id="关于后续拓展"><a href="#关于后续拓展" class="headerlink" title="关于后续拓展"></a>关于后续拓展</h1><blockquote>
-<p>在这个实验中，我使用的是直接使用firefox来进行操作，我们也可以下载其他的无界面浏览器如phantomjs等来进行操作，只需引入路径，在进行后续操作即可。可以提高一些速度。<br><br>有一些重复的功能，可以编写函数来进行实现。</p>
-</blockquote>
-
-          
+          <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="python安装"><a href="#python安装" class="headerlink" title="python安装"></a>python安装</h2><p>我选择的是python2.7，这个版本目前还是比较主流的，首先前往python的官网，选择相应的版本下载到本地，安装时，选择添加路径到path和安装pip。打开命令符输入<code>python</code>进行验证，如果当出现版本号等信息时，表示添加成功。否则，可以手动添加路径。</p>
+<h2 id="相关包的安装"><a href="#相关包的安装" class="headerlink" title="相关包的安装"></a>相关包的安装</h2>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/19/pyrhon简单爬虫（beautifulsoup-selenium）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -557,22 +550,13 @@
 
       
         
-          
-            <h1 id="学习总结"><a href="#学习总结" class="headerlink" title="学习总结"></a>学习总结</h1><h2 id="html-css-js简介"><a href="#html-css-js简介" class="headerlink" title="html+css+js简介"></a>html+css+js简介</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML，超文本标记语言，主要通过标签来对网页内容进行标记，从而形成不同的模块，包括<code>&lt;head&gt;</code>和<code>&lt;body&gt;</code>两大部分。<code>&lt;head&gt;</code>中包括一些定义和链接，<code>&lt;body</code>中包括网页的主要内容。</p>
-<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>层叠样式表，主要用来定义网页的样式，失望也呈现出更加美观的样式和更好的用户体验。</p>
-<h3 id="js"><a href="#js" class="headerlink" title="js"></a>js</h3><p>在这个案例中，使用了js来进行表单的验证，js用来和用户进行交互，给网页增加一些动态效果。是一种在网页中广泛使用的脚本语言。</p>
-<h2 id="网页编写"><a href="#网页编写" class="headerlink" title="网页编写"></a>网页编写</h2><p>网页编写过程中，主要是要填好结构，之后再做进一步的对样式的改变。<br><img src="html1.jpg" width="300" height="200" align="center"><br><br></p>
-<h4 id="大致流程"><a href="#大致流程" class="headerlink" title="大致流程"></a>大致流程</h4><p>1.首先安装好webstorm,创建一个project。<br><br>2.下载bootstrap代码，导入到project中。<br><br>3.根据要编写的内容，编写html代码，并且利用css和bootstrap组件等进行网页的一些布置和渲染。<br><br>4.最后进行一些测试，进一步调整网页结构等。<br><br></p>
-<h4 id="几点提示"><a href="#几点提示" class="headerlink" title="几点提示"></a>几点提示</h4><p>*div中文字的垂直居中可以通过设置<code>line-height</code>与’div’的<code>height</code>相同，达到垂直居中的目的。</p>
-<h2 id="脚本编写"><a href="#脚本编写" class="headerlink" title="脚本编写"></a>脚本编写</h2><h3 id="js-1"><a href="#js-1" class="headerlink" title="js"></a>js</h3><p>在此次的表单验证中，需要实现的功能包括<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在提交用户名和密码时进行验证</div><div class="line">弹出警告框</div><div class="line">警告框在规定时间内出现和消失</div></pre></td></tr></table></figure></p>
-<h4 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h4><p>1.设置div显示警告框，警告框组件可以参考bootstrap;<br><br>2.设置style为display:none.当触发条件时，使其display为block.<br><br>在功能实现的过程中，使用了函数包括时间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">setTimeout(function()&#123;&#125;,time);//设置动作时间；</div><div class="line">document.getElementById(&apos;_name&apos;);//获取元素；（除此之外还有这一类通过获取元素）</div><div class="line">re.test(&apos;string&apos;);//正则表达式的测试；</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>点击button时，触发表单检测功能函数。当登录失败时，return false。<br><br></p>
-<p>在实现过程中，</p>
-<h4 id="有几点注意："><a href="#有几点注意：" class="headerlink" title="有几点注意："></a>有几点注意：</h4><p><em>js代码最好可以放在<code>window.onload()</code>函数中，在运行之前加载。也可以将js代码在<code>&lt;body&gt;</code>的末尾引入。
-</em>button的type不要写成submit,这样会直接刷新页面，可以用onclick()事件来进行检测。<br><em>可以利用一些浏览器比如chrome进行js代码的验证，可以添加断点等，查看调用。
-</em>警告框在显示时，可以设置绝对位置，避免出现div的位置错乱的情况。</p>
-
-          
+          <h1 id="学习总结"><a href="#学习总结" class="headerlink" title="学习总结"></a>学习总结</h1><h2 id="html-css-js简介"><a href="#html-css-js简介" class="headerlink" title="html+css+js简介"></a>html+css+js简介</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML，超文本标记语言，主要通过标签来对网页内容进行标记，从而形成不同的模块，包括<code>&lt;head&gt;</code>和<code>&lt;body&gt;</code>两大部分。<code>&lt;head&gt;</code>中包括一些定义和链接，<code>&lt;body</code>中包括网页的主要内容。</p>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/08/简单前端-js表单验证/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -689,31 +673,13 @@
 
       
         
-          
-            <h1 id="hexo-git搭建静态博客"><a href="#hexo-git搭建静态博客" class="headerlink" title="hexo+git搭建静态博客"></a>hexo+git搭建静态博客</h1><h2 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a>hexo配置</h2><h3 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h3><p>安装node.js和git<br>安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div></pre></td></tr></table></figure></p>
+          <h1 id="hexo-git搭建静态博客"><a href="#hexo-git搭建静态博客" class="headerlink" title="hexo+git搭建静态博客"></a>hexo+git搭建静态博客</h1><h2 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a>hexo配置</h2><h3 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h3><p>安装node.js和git<br>安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div></pre></td></tr></table></figure></p>
 <p>创建一个叫”blog”的文件夹，在命令行模式下，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>进行初始化，hexo会自动在目标文件夹建立网站所需的文件<br>输入<code>hexo server</code>，在浏览器中打开<code>https://localhost:4000/</code>，可以看到hexo已经生成了一篇blog。</p>
-<h3 id="同步至服务器"><a href="#同步至服务器" class="headerlink" title="同步至服务器"></a>同步至服务器</h3><p>注册github<br>建立一个new respository,仓库名为<code>user_name.github.io</code><br>在命令行模式下，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;yourname&quot;</div><div class="line">git config --global user.mail &quot;youremail&quot;</div></pre></td></tr></table></figure></p>
-<p>git bash中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t ras -C yourmail@example.com</div></pre></td></tr></table></figure></p>
-<p>将<code>.ssh</code>文件夹中生成的公钥复制到github的ssh key中<br>在git bash中，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh git@github.com</div></pre></td></tr></table></figure></p>
-<p>检查是否可以连接</p>
-<h2 id="建立页面"><a href="#建立页面" class="headerlink" title="建立页面"></a>建立页面</h2><h3 id="一些简单的命令"><a href="#一些简单的命令" class="headerlink" title="一些简单的命令"></a>一些简单的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo new page pagename #建立新页面</div><div class="line">hexo new &quot;name&quot; #建立新文章</div><div class="line">hexo g #生成静态页面至public</div><div class="line">hexo d #部署到github</div><div class="line">hexo help #查看帮助</div></pre></td></tr></table></figure>
-<p>每次重新布置后记得使用<code>hexo clean</code>清除缓存。</p>
-<h3 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h3><p>布置的时候修改根目录下的配置文件中，将theme参数修改为themes文件中对应的主题就好，（最好提前备份配置文件）。</p>
-<p>我的博客使用的是<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">next</a>主题,可以前往它的官网，有很详细的使用说明。</p>
-<h1 id="遇到的一些问题及其解决方法"><a href="#遇到的一些问题及其解决方法" class="headerlink" title="遇到的一些问题及其解决方法"></a>遇到的一些问题及其解决方法</h1><ul>
-<li>同时在两个窗口中输入<code>hexo server</code>，显示端口已经被使用，解决方法：重新分配一个窗口,例如：<code>hexo server -p 5000</code></li>
-<li>在标签更新的时候，因为没有及时clean的原因，标签数量显示出现了问题。</li>
-<li>在文件部署中，要注意每个冒号后面都要留空格，否则会出现错误。</li>
-<li>“关于”页面中布置的网易音乐播放器，在本地显示上传后却无法在网页显示的问题。解决，网易云音乐生成的外链播放器中使用的是http,将http改为https后，可以在网页上显示。</li>
-</ul>
-<h1 id="后续可增加的内容"><a href="#后续可增加的内容" class="headerlink" title="后续可增加的内容"></a>后续可增加的内容</h1><ul>
-<li>访客统计功能</li>
-<li>关于中音乐播放器的设置<br>…</li>
-</ul>
-<p>参考文章：<br><a href="http://m.blog.csdn.net/article/details?id=51577815" target="_blank" rel="external">基于next主题</a></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/03/我的第一个博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -798,7 +764,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

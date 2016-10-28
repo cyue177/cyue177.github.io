@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="unity3d,unity3d简单控制," />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="no pains_no gains_">
+<meta name="description" content="unity3d界面了解Hierarchy 层次视图包含每一个当前场景所有游戏对象，其中一些是资源文件的实例，如3D模型和其他预制物体（Prefab）的实例。您可以在层次结构视图中选择对象或者生成对象。当在场景中增加或者删除对象，层次结构视图中相应的对象则会出现或消失。 
+Scene View 场景视图场景视图（Scene View）是交互式沙盒，可以使用它来选择和布置环境、玩家、摄像机、敌人和所有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="unity3d实现人物的简单控制">
 <meta property="og:url" content="http://yoursite.com/2016/10/28/unity3d实现人物的简单控制/index.html">
 <meta property="og:site_name" content="Cyue's Blog">
-<meta property="og:description" content="no pains_no gains_">
-<meta property="og:updated_time" content="2016-10-28T12:44:54.367Z">
+<meta property="og:description" content="unity3d界面了解Hierarchy 层次视图包含每一个当前场景所有游戏对象，其中一些是资源文件的实例，如3D模型和其他预制物体（Prefab）的实例。您可以在层次结构视图中选择对象或者生成对象。当在场景中增加或者删除对象，层次结构视图中相应的对象则会出现或消失。 
+Scene View 场景视图场景视图（Scene View）是交互式沙盒，可以使用它来选择和布置环境、玩家、摄像机、敌人和所有">
+<meta property="og:updated_time" content="2016-10-28T17:13:03.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity3d实现人物的简单控制">
-<meta name="twitter:description" content="no pains_no gains_">
+<meta name="twitter:description" content="unity3d界面了解Hierarchy 层次视图包含每一个当前场景所有游戏对象，其中一些是资源文件的实例，如3D模型和其他预制物体（Prefab）的实例。您可以在层次结构视图中选择对象或者生成对象。当在场景中增加或者删除对象，层次结构视图中相应的对象则会出现或消失。 
+Scene View 场景视图场景视图（Scene View）是交互式沙盒，可以使用它来选择和布置环境、玩家、摄像机、敌人和所有">
 
 
 
@@ -313,7 +316,36 @@
       
 
       
-        
+        <h2 id="unity3d界面了解"><a href="#unity3d界面了解" class="headerlink" title="unity3d界面了解"></a>unity3d界面了解</h2><h4 id="Hierarchy-层次视图"><a href="#Hierarchy-层次视图" class="headerlink" title="Hierarchy 层次视图"></a>Hierarchy 层次视图</h4><p>包含每一个当前场景所有游戏对象，其中一些是资源文件的实例，如3D模型和其他预制物体（Prefab）的实例。您可以在层次结构视图中选择对象或者生成对象。当在场景中增加或者删除对象，层次结构视图中相应的对象则会出现或消失。 </p>
+<h4 id="Scene-View-场景视图"><a href="#Scene-View-场景视图" class="headerlink" title="Scene View 场景视图"></a>Scene View 场景视图</h4><p>场景视图（Scene View）是交互式沙盒，可以使用它来选择和布置环境、玩家、摄像机、敌人和所有其他游戏对象。</p>
+<h4 id="Project-工程视图"><a href="#Project-工程视图" class="headerlink" title="Project 工程视图"></a>Project 工程视图</h4><p>每个Unity的项目包含一个资源文件夹。此文件夹的内容呈现在项目视图。这里存放着你游戏的所有资源，比如场景、脚本、三维模型、纹理、音频文件和预制组件。如果你在项目视图里右击任何资源，你都可以在资源管理器中（在Mac系统中是Reveal in Finder）找到这些真正的文件本身。</p>
+<h4 id="Inspector检视面板"><a href="#Inspector检视面板" class="headerlink" title="Inspector检视面板"></a>Inspector检视面板</h4><p>显示当前当前选定的游戏对象的所有附加组件(脚本属于组件)及其属性的相关详细信息。</p>
+<h4 id="一些视图等"><a href="#一些视图等" class="headerlink" title="一些视图等"></a>一些视图等</h4><p>如gameview视图，可以用来观察运行状态等情况。</p>
+<blockquote>
+<p>可参考<a href="http://www.cnblogs.com/fortomorrow/archive/2012/10/29/unity01.html" target="_blank" rel="external">unity3d界面功能操作详解</a><br><a id="more"></a></p>
+</blockquote>
+<h2 id="unity安装和配置"><a href="#unity安装和配置" class="headerlink" title="unity安装和配置"></a>unity安装和配置</h2><p><a href="http://www.cnblogs.com/fortomorrow/archive/2012/10/29/unity01.html" target="_blank" rel="external">unity3d4.6.0破解版下载地址</a></p>
+<ul>
+<li>安装unity3d，一路next。</li>
+<li>破解，打开下载的unpch95_unityCrack文件夹，拷贝Unity 4.x Pro Patch.exe到unity安装目录下Editor文件夹下面，然后运行，点Patch按钮，读完条之后再点Ce Lic按钮， OK，破解完成。<br></li>
+<li>配置，打开破解好的unity3d，点Edit选项卡，选择Preferences…找到External Tools，会看到External Script Editor是Monodevelop， 点Browser选择自己喜欢的Editor。</li>
+<li>资源包导入 到unity里面选择Assets选项卡，点选import package -&gt;custom package…  然后选中下载的资源包就可以了。</li>
+</ul>
+<h2 id="实现人物控制"><a href="#实现人物控制" class="headerlink" title="实现人物控制"></a>实现人物控制</h2><p>在project的object中找到关于player的文件夹，下面有player的动画，就是要用这些动画，实现在向运动中动画的循环播放。</p>
+<h4 id="脚本编写"><a href="#脚本编写" class="headerlink" title="脚本编写"></a>脚本编写</h4><p>在project视图中寻找scripts脚本存放的文件夹，右键选择creat c#脚本，（注意文件名字要与类名相同，否则会无法导入），</p>
+<ul>
+<li><p>先创建一个控制运动速度和运动方向的脚本，（这里用到向量的知识），运动距离=方向<em>速度</em>时间，注意向量。<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Vector3 direction = Input.GetAxis(&quot;Horizontal&quot;) * transform.right + Input.GetAxis(&quot;Vertical&quot;) * transform.forward;</div><div class="line">transform.position += walkspeed * Time.deltaTime * direction;</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建控制动画播放的脚本,<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">void Update()//更新</div><div class="line">    &#123;</div><div class="line">        Vector3 Velocity = (transform.position - lastPosition) / Time.deltaTime;</div><div class="line">        Vector3 localVelocity = transform.InverseTransformDirection(Velocity);</div><div class="line">        localVelocity.y = 0;</div><div class="line"></div><div class="line">        Speed = localVelocity.magnitude;//速度和角度判断</div><div class="line">        Angle = (HorizontalAngle(localVelocity) + 360f) % 360f;</div><div class="line">        lastPosition = transform.position;</div><div class="line">        </div><div class="line">        animator.SetFloat(&quot;Speed&quot;, Speed);//对应控制器中的变量</div><div class="line">        animator.SetFloat(&quot;Angle&quot;, Angle);</div><div class="line"></div><div class="line">        Debug.Log(&quot;Speed:&quot; + Speed + &quot;Angle&quot; + Angle);//实时更新每一帧</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里角度的计算用到了数学中的反正切<code>float Angle = Mathf.Atan2(localVelocity.z, localVelocity.x) * Mathf.Rad2Deg;</code>,计算出角度。</p>
+<h4 id="动画控制器"><a href="#动画控制器" class="headerlink" title="动画控制器"></a>动画控制器</h4><p>右键project视图中的player，creat Animator Controller，将动画中的元素直接拖到控制器中，设置静止状态时为默认状态，右键make transition,将静止状态指向向左向右向前向后状态，设置参数，点击transition连线，设置发生参数，包括添加的parameters参数。（角度的设置如向前是45到135，向左135-225，以此类推）</p>
+<h4 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h4><p>将创建好的控制器添加到player的inspector中，设置其animator的controller为所创建的控制器。并且，将脚本文件与创建好的控制器关联起来。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>unity3d的日常实用性并不高，但是如果要是在游戏开发这条路上走的话，unity是必不可少的，他已经成长为最重要的游戏引擎之一。 </p>
+
       
     </div>
 
@@ -332,6 +364,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/unity3d/" rel="tag">#unity3d</a>
+          
+            <a href="/tags/unity3d简单控制/" rel="tag">#unity3d简单控制</a>
+          
+        </div>
       
 
       
@@ -433,7 +473,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -462,7 +502,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#unity3d界面了解"><span class="nav-number">1.</span> <span class="nav-text">unity3d界面了解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hierarchy-层次视图"><span class="nav-number">1.0.1.</span> <span class="nav-text">Hierarchy 层次视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scene-View-场景视图"><span class="nav-number">1.0.2.</span> <span class="nav-text">Scene View 场景视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project-工程视图"><span class="nav-number">1.0.3.</span> <span class="nav-text">Project 工程视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inspector检视面板"><span class="nav-number">1.0.4.</span> <span class="nav-text">Inspector检视面板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些视图等"><span class="nav-number">1.0.5.</span> <span class="nav-text">一些视图等</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unity安装和配置"><span class="nav-number">2.</span> <span class="nav-text">unity安装和配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现人物控制"><span class="nav-number">3.</span> <span class="nav-text">实现人物控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#脚本编写"><span class="nav-number">3.0.1.</span> <span class="nav-text">脚本编写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画控制器"><span class="nav-number">3.0.2.</span> <span class="nav-text">动画控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理"><span class="nav-number">3.0.3.</span> <span class="nav-text">处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.1.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
