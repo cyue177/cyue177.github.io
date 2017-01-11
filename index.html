@@ -269,8 +269,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/10/实验室study1st/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2017/01/11/实验室study1st/" itemprop="url">
+                  实验室study1st
                 </a>
               
             
@@ -283,8 +283,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-10T12:08:02+08:00" content="2017-01-10">
-              2017-01-10
+            <time itemprop="dateCreated" datetime="2017-01-11T19:02:33+08:00" content="2017-01-11">
+              2017-01-11
             </time>
           </span>
 
@@ -294,8 +294,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/01/10/实验室study1st/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/10/实验室study1st/" itemprop="commentsCount"></span>
+                <a href="/2017/01/11/实验室study1st/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/11/实验室study1st/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,14 +325,12 @@
 <h2 id="大概思路"><a href="#大概思路" class="headerlink" title="大概思路"></a>大概思路</h2><blockquote>
 <p>BootLoader-&gt;内核-&gt;驱动-&gt;根文件系统<br><br>机制–提供什么能力<br><br>策略–如何使用这种能力</p>
 </blockquote>
-<p>##具体学习</p>
-<h3 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h3><p>####内核划分</p>
-<p>#####进程管理<br>内核负责创建和销毁进程, 并处理它们与外部世界的联系(输入和输出). 不同进程<br>间通讯(通过信号, 管道, 或者进程间通讯原语)对整个系统功能来说是基本的, 也<br>由内核处理. 另外, 调度器, 控制进程如何共享 CPU, 是进程管理的一部分. 更通<br>常地, 内核的进程管理活动实现了多个进程在一个单个或者几个 CPU 之上的抽象.</p>
-<p>#####内存管理<br>计算机的内存是主要的资源, 处理它所用的策略对系统性能是至关重要的. 内核为<br>所有进程的每一个都在有限的可用资源上建立了一个虚拟地址空间. 内核的不同部<br>分与内存管理子系统通过一套函数调用交互, 从简单的 malloc/free 对到更多更<br>复杂的功能.</p>
-<p>#####文件系统<br>Unix 在很大程度上基于文件系统的概念; 几乎 Unix 中的任何东西都可看作一个<br>文件. 内核在非结构化的硬件之上建立了一个结构化的文件系统, 结果是文件的抽<br>象非常多地在整个系统中应用. 另外, Linux 支持多个文件系统类型, 就是说, 物<br>理介质上不同的数据组织方式. 例如, 磁盘可被格式化成标准 Linux 的 ext3 文<br>件系统, 普遍使用的 FAT 文件系统, 或者其他几个文件系统.</p>
-<p>#####设备控制<br>几乎每个系统操作最终都映射到一个物理设备上. 除了处理器, 内存和非常少的别<br>的实体之外, 全部中的任何设备控制操作都由特定于要寻址的设备相关的代码来进<br>行. 这些代码称为设备驱动. 内核中必须嵌入系统中出现的每个外设的驱动, 从硬<br>盘驱动到键盘和磁带驱动器. 内核功能的这个方面是本书中的我们主要感兴趣的地<br>方.</p>
-<p>#####网络<br>网络必须由操作系统来管理, 因为大部分网络操作不是特定于某一个进程: 进入系<br>统的报文是异步事件. 报文在某一个进程接手之前必须被收集, 识别, 分发. 系统<br>负责在程序和网络接口之间递送数据报文, 它必须根据程序的网络活动来控制程序<br>的执行. 另外, 所有的路由和地址解析问题都在内核中实现. </p>
-<p>#####第一个内核驱动程序<br>程序中定义了两个模块，初始化和退出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#include &lt;linux/init.h&gt;</div><div class="line">#include &lt;linux/module.h&gt; </div><div class="line">MODULE_LICENSE(&quot;Dual BSD/GPL&quot;); </div><div class="line"> </div><div class="line">static int hello_init(void) &#123;         printk(KERN_ALERT &quot;Hello, world\n&quot;);         return 0; &#125; static void hello_exit(void) &#123;         printk(KERN_ALERT &quot;Goodbye, cruel world\n&quot;); &#125; </div><div class="line"> </div><div class="line">module_init(hello_init); module_exit(hello_exit);</div></pre></td></tr></table></figure></p>
+<h2 id="具体学习"><a href="#具体学习" class="headerlink" title="具体学习"></a>具体学习</h2><h3 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h3><h4 id="内核划分"><a href="#内核划分" class="headerlink" title="内核划分"></a>内核划分</h4><h5 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h5><p>内核负责创建和销毁进程, 并处理它们与外部世界的联系(输入和输出). 不同进程<br>间通讯(通过信号, 管道, 或者进程间通讯原语)对整个系统功能来说是基本的, 也<br>由内核处理. 另外, 调度器, 控制进程如何共享 CPU, 是进程管理的一部分. 更通<br>常地, 内核的进程管理活动实现了多个进程在一个单个或者几个 CPU 之上的抽象.</p>
+<h5 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h5><p>计算机的内存是主要的资源, 处理它所用的策略对系统性能是至关重要的. 内核为<br>所有进程的每一个都在有限的可用资源上建立了一个虚拟地址空间. 内核的不同部<br>分与内存管理子系统通过一套函数调用交互, 从简单的 malloc/free 对到更多更<br>复杂的功能.</p>
+<h5 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h5><p>Unix 在很大程度上基于文件系统的概念; 几乎 Unix 中的任何东西都可看作一个<br>文件. 内核在非结构化的硬件之上建立了一个结构化的文件系统, 结果是文件的抽<br>象非常多地在整个系统中应用. 另外, Linux 支持多个文件系统类型, 就是说, 物<br>理介质上不同的数据组织方式. 例如, 磁盘可被格式化成标准 Linux 的 ext3 文<br>件系统, 普遍使用的 FAT 文件系统, 或者其他几个文件系统.</p>
+<h5 id="设备控制"><a href="#设备控制" class="headerlink" title="设备控制"></a>设备控制</h5><p>几乎每个系统操作最终都映射到一个物理设备上. 除了处理器, 内存和非常少的别<br>的实体之外, 全部中的任何设备控制操作都由特定于要寻址的设备相关的代码来进<br>行. 这些代码称为设备驱动. 内核中必须嵌入系统中出现的每个外设的驱动, 从硬<br>盘驱动到键盘和磁带驱动器. 内核功能的这个方面是本书中的我们主要感兴趣的地<br>方.</p>
+<h5 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h5><p>网络必须由操作系统来管理, 因为大部分网络操作不是特定于某一个进程: 进入系<br>统的报文是异步事件. 报文在某一个进程接手之前必须被收集, 识别, 分发. 系统<br>负责在程序和网络接口之间递送数据报文, 它必须根据程序的网络活动来控制程序<br>的执行. 另外, 所有的路由和地址解析问题都在内核中实现. </p>
+<h5 id="第一个内核驱动程序"><a href="#第一个内核驱动程序" class="headerlink" title="第一个内核驱动程序"></a>第一个内核驱动程序</h5><p>程序中定义了两个模块，初始化和退出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#include &lt;linux/init.h&gt;</div><div class="line">#include &lt;linux/module.h&gt; </div><div class="line">MODULE_LICENSE(&quot;Dual BSD/GPL&quot;); </div><div class="line"> </div><div class="line">static int hello_init(void) &#123;         printk(KERN_ALERT &quot;Hello, world\n&quot;);         return 0; &#125; static void hello_exit(void) &#123;         printk(KERN_ALERT &quot;Goodbye, cruel world\n&quot;); &#125; </div><div class="line"> </div><div class="line">module_init(hello_init); module_exit(hello_exit);</div></pre></td></tr></table></figure></p>
 <p>Makefile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">obj-m += reverse.o</div><div class="line">all:</div><div class="line">    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules</div><div class="line">clean:</div><div class="line">    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean</div></pre></td></tr></table></figure></p>
 <h3 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h3><p>驱动程序<br><br>     它是一个存在于应用程序和实际设备间的软件层.</p>
 <blockquote>
