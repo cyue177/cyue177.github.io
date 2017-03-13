@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="no pains_no gains_">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cyue's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/前端/index.html">
+<meta name="description" content="依旧是内核编译模块Makefile对于之前的”hello world”程序，只需要单行程序obj:=hello_mode.o.熟悉 make , 但是对 2.6 内核建立系统不熟悉的读者, 可能奇怪这个 makefile 如何工作. 毕竟上面的这一行不是一个传统的 makefile 的样子. 答案, 当然, 是内核建立系统处理 了余下的工作. 上面的安排( 它利用了由 GNU make 提供的扩展">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实验study2">
+<meta property="og:url" content="http://yoursite.com/2017/01/13/实验study2/index.html">
 <meta property="og:site_name" content="Cyue's Blog">
-<meta property="og:description" content="no pains_no gains_">
+<meta property="og:description" content="依旧是内核编译模块Makefile对于之前的”hello world”程序，只需要单行程序obj:=hello_mode.o.熟悉 make , 但是对 2.6 内核建立系统不熟悉的读者, 可能奇怪这个 makefile 如何工作. 毕竟上面的这一行不是一个传统的 makefile 的样子. 答案, 当然, 是内核建立系统处理 了余下的工作. 上面的安排( 它利用了由 GNU make 提供的扩展">
+<meta property="og:updated_time" content="2017-01-16T14:25:46.499Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cyue's Blog">
-<meta name="twitter:description" content="no pains_no gains_">
+<meta name="twitter:title" content="实验study2">
+<meta name="twitter:description" content="依旧是内核编译模块Makefile对于之前的”hello world”程序，只需要单行程序obj:=hello_mode.o.熟悉 make , 但是对 2.6 内核建立系统不熟悉的读者, 可能奇怪这个 makefile 如何工作. 毕竟上面的这一行不是一个传统的 makefile 的样子. 答案, 当然, 是内核建立系统处理 了余下的工作. 上面的安排( 它利用了由 GNU make 提供的扩展">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/前端/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/13/实验study2/"/>
 
-  <title> 标签: 前端 | Cyue's Blog </title>
+  <title> 实验study2 | Cyue's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,46 +246,128 @@
             
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        前端
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                实验study2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-13T13:09:24+08:00" content="2017-01-13">
+              2017-01-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/13/实验study2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/13/实验study2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h1 id="依旧是内核"><a href="#依旧是内核" class="headerlink" title="依旧是内核"></a>依旧是内核</h1><h2 id="编译模块"><a href="#编译模块" class="headerlink" title="编译模块"></a>编译模块</h2><h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><p>对于之前的”hello world”程序，只需要单行程序<code>obj:=hello_mode.o</code>.<br>熟悉 make , 但是对 2.6 内核建立系统不熟悉的读者, 可能奇怪这个 makefile 如何工作. 毕竟上面的这一行不是一个传统的 makefile 的样子. 答案, 当然, 是内核建立系统处理 了余下的工作. 上面的安排( 它利用了由 GNU make 提供的扩展语法 )表明有一个模块要 从目标文件 hello.o 建立. 在从目标文件建立后结果模块命名为 hello.ko.<br>反之, 如果你有一个模块名为 module.ko, 是来自 2 个源文件( 姑且称之为, file1.c 和 file2.c ), 正确的书写应当是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">obj-m := module.o </div><div class="line">module-objs := file1.o file2.o</div></pre></td></tr></table></figure></p>
+<h2 id="加载和卸载模块"><a href="#加载和卸载模块" class="headerlink" title="加载和卸载模块"></a>加载和卸载模块</h2><p>之前我们知道用insmod将模块加载到内核</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/08/简单前端-js表单验证/" itemprop="url">
-              
-                <span itemprop="name">简单前端(js表单验证)</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-08T20:38:50+08:00"
-              content="2016-10-08" >
-          10-08
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/11/实验室study1st/" rel="next" title="实验室study1st">
+                <i class="fa fa-chevron-left"></i> 实验室study1st
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/13/php学习笔记-wamp的安装与安装中的一些问题/" rel="prev" title="php学习笔记 --wamp的安装与安装中的一些问题">
+                php学习笔记 --wamp的安装与安装中的一些问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -292,6 +375,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/13/实验study2/"
+           data-title="实验study2" data-url="http://yoursite.com/2017/01/13/实验study2/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -312,8 +403,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -365,6 +465,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#依旧是内核"><span class="nav-number">1.</span> <span class="nav-text">依旧是内核</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译模块"><span class="nav-number">1.1.</span> <span class="nav-text">编译模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Makefile"><span class="nav-number">1.1.1.</span> <span class="nav-text">Makefile</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载和卸载模块"><span class="nav-number">1.2.</span> <span class="nav-text">加载和卸载模块</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -468,6 +579,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

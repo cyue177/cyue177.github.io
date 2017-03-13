@@ -269,6 +269,212 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/13/php学习笔记-wamp的安装与安装中的一些问题/" itemprop="url">
+                  php学习笔记 --wamp的安装与安装中的一些问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T18:42:58+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/13/php学习笔记-wamp的安装与安装中的一些问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/php学习笔记-wamp的安装与安装中的一些问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="如何修改mysql密码"><a href="#如何修改mysql密码" class="headerlink" title="如何修改mysql密码"></a>如何修改mysql密码</h1><p>打开mysql控制台，初始密码为空，我们可以参考<a href="http://www.cnblogs.com/zhangzhu/archive/2013/07/04/3172486.html" target="_blank" rel="external">mysql命令大全</a></p>
+<h1 id="无法打开localhost，等"><a href="#无法打开localhost，等" class="headerlink" title="无法打开localhost，等"></a>无法打开localhost，等</h1><p>打开Alisas中的扩展目录下，edit将其中的<code>127.0.0.1</code>修改为all.</p>
+<h1 id="修改mysql-密码后无法登陆phpmyadminde-问题"><a href="#修改mysql-密码后无法登陆phpmyadminde-问题" class="headerlink" title="修改mysql 密码后无法登陆phpmyadminde 问题"></a>修改mysql 密码后无法登陆phpmyadminde 问题</h1><p>打开config.inc.php（一般位于wamp/apps/phpmyadmin/下），搜索password，将后面的值修改后重启所有服务即可。</p>
+<h1 id="修改www根目录"><a href="#修改www根目录" class="headerlink" title="修改www根目录"></a>修改www根目录</h1><p>通常情况下，默认的www根目录是安装目录下的www文件，但是在实际使用中，并不总是如此，所以，我们要学习如何修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">左键wamp图标，找到apache的扩展目录中hpptd.conf,找到documentroot,directory中将目录改至你想要修改的目录下。</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/13/实验study2/" itemprop="url">
+                  实验study2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-13T13:09:24+08:00" content="2017-01-13">
+              2017-01-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/13/实验study2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/13/实验study2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="依旧是内核"><a href="#依旧是内核" class="headerlink" title="依旧是内核"></a>依旧是内核</h1><h2 id="编译模块"><a href="#编译模块" class="headerlink" title="编译模块"></a>编译模块</h2><h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><p>对于之前的”hello world”程序，只需要单行程序<code>obj:=hello_mode.o</code>.<br>熟悉 make , 但是对 2.6 内核建立系统不熟悉的读者, 可能奇怪这个 makefile 如何工作. 毕竟上面的这一行不是一个传统的 makefile 的样子. 答案, 当然, 是内核建立系统处理 了余下的工作. 上面的安排( 它利用了由 GNU make 提供的扩展语法 )表明有一个模块要 从目标文件 hello.o 建立. 在从目标文件建立后结果模块命名为 hello.ko.<br>反之, 如果你有一个模块名为 module.ko, 是来自 2 个源文件( 姑且称之为, file1.c 和 file2.c ), 正确的书写应当是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">obj-m := module.o </div><div class="line">module-objs := file1.o file2.o</div></pre></td></tr></table></figure></p>
+<h2 id="加载和卸载模块"><a href="#加载和卸载模块" class="headerlink" title="加载和卸载模块"></a>加载和卸载模块</h2><p>之前我们知道用insmod将模块加载到内核</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/11/实验室study1st/" itemprop="url">
                   实验室study1st
                 </a>
@@ -962,7 +1168,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
