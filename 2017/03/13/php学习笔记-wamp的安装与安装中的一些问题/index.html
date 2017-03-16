@@ -85,21 +85,18 @@
 
 
 <meta name="description" content="如何修改mysql密码打开mysql控制台，初始密码为空，我们可以参考mysql命令大全
-无法打开localhost，等打开Alisas中的扩展目录下，edit将其中的127.0.0.1修改为all.
-修改mysql 密码后无法登陆phpmyadminde 问题打开config.inc.php（一般位于wamp/apps/phpmyadmin/下），搜索password，将后面的值修改后重启所有服">
+无法打开localhost，等">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php学习笔记 --wamp的安装与安装中的一些问题">
 <meta property="og:url" content="http://yoursite.com/2017/03/13/php学习笔记-wamp的安装与安装中的一些问题/index.html">
 <meta property="og:site_name" content="Cyue's Blog">
 <meta property="og:description" content="如何修改mysql密码打开mysql控制台，初始密码为空，我们可以参考mysql命令大全
-无法打开localhost，等打开Alisas中的扩展目录下，edit将其中的127.0.0.1修改为all.
-修改mysql 密码后无法登陆phpmyadminde 问题打开config.inc.php（一般位于wamp/apps/phpmyadmin/下），搜索password，将后面的值修改后重启所有服">
-<meta property="og:updated_time" content="2017-03-13T11:26:07.878Z">
+无法打开localhost，等">
+<meta property="og:updated_time" content="2017-03-16T10:51:56.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php学习笔记 --wamp的安装与安装中的一些问题">
 <meta name="twitter:description" content="如何修改mysql密码打开mysql控制台，初始密码为空，我们可以参考mysql命令大全
-无法打开localhost，等打开Alisas中的扩展目录下，edit将其中的127.0.0.1修改为all.
-修改mysql 密码后无法登陆phpmyadminde 问题打开config.inc.php（一般位于wamp/apps/phpmyadmin/下），搜索password，将后面的值修改后重启所有服">
+无法打开localhost，等">
 
 
 
@@ -321,9 +318,12 @@
 
       
         <h1 id="如何修改mysql密码"><a href="#如何修改mysql密码" class="headerlink" title="如何修改mysql密码"></a>如何修改mysql密码</h1><p>打开mysql控制台，初始密码为空，我们可以参考<a href="http://www.cnblogs.com/zhangzhu/archive/2013/07/04/3172486.html" target="_blank" rel="external">mysql命令大全</a></p>
-<h1 id="无法打开localhost，等"><a href="#无法打开localhost，等" class="headerlink" title="无法打开localhost，等"></a>无法打开localhost，等</h1><p>打开Alisas中的扩展目录下，edit将其中的<code>127.0.0.1</code>修改为all.</p>
+<h1 id="无法打开localhost，等"><a href="#无法打开localhost，等" class="headerlink" title="无法打开localhost，等"></a>无法打开localhost，等</h1><a id="more"></a>
+<p>打开Alisas中的扩展目录下，edit将其中的<code>127.0.0.1</code>修改为all.</p>
 <h1 id="修改mysql-密码后无法登陆phpmyadminde-问题"><a href="#修改mysql-密码后无法登陆phpmyadminde-问题" class="headerlink" title="修改mysql 密码后无法登陆phpmyadminde 问题"></a>修改mysql 密码后无法登陆phpmyadminde 问题</h1><p>打开config.inc.php（一般位于wamp/apps/phpmyadmin/下），搜索password，将后面的值修改后重启所有服务即可。</p>
 <h1 id="修改www根目录"><a href="#修改www根目录" class="headerlink" title="修改www根目录"></a>修改www根目录</h1><p>通常情况下，默认的www根目录是安装目录下的www文件，但是在实际使用中，并不总是如此，所以，我们要学习如何修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">左键wamp图标，找到apache的扩展目录中hpptd.conf,找到documentroot,directory中将目录改至你想要修改的目录下。</div></pre></td></tr></table></figure></p>
+<h1 id="wampserver多站点的配置"><a href="#wampserver多站点的配置" class="headerlink" title="wampserver多站点的配置"></a>wampserver多站点的配置</h1><p>如何使用一个web程序运行多个程序和项目；<br>这里有一个网址进行参考<a href="http://www.zhimengzhe.com/php/165968.html" target="_blank" rel="external">wampserver多站点配置</a>.</p>
+<p>#wampserver自拟定端口号<br>wamp默认使用80端口，若80端口冲突，则apache无法打开。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">打开apache中的httpd.conf中查找80，修改listen 80为listen *（端口号）,</div><div class="line">servername localhost 80为 *.restart 服务之后,</div><div class="line">在搜索栏中输入localhost:*,即可访问。</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -476,7 +476,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何修改mysql密码"><span class="nav-number">1.</span> <span class="nav-text">如何修改mysql密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无法打开localhost，等"><span class="nav-number">2.</span> <span class="nav-text">无法打开localhost，等</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改mysql-密码后无法登陆phpmyadminde-问题"><span class="nav-number">3.</span> <span class="nav-text">修改mysql 密码后无法登陆phpmyadminde 问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改www根目录"><span class="nav-number">4.</span> <span class="nav-text">修改www根目录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何修改mysql密码"><span class="nav-number">1.</span> <span class="nav-text">如何修改mysql密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无法打开localhost，等"><span class="nav-number">2.</span> <span class="nav-text">无法打开localhost，等</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改mysql-密码后无法登陆phpmyadminde-问题"><span class="nav-number">3.</span> <span class="nav-text">修改mysql 密码后无法登陆phpmyadminde 问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改www根目录"><span class="nav-number">4.</span> <span class="nav-text">修改www根目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wampserver多站点的配置"><span class="nav-number">5.</span> <span class="nav-text">wampserver多站点的配置</span></a></li></ol></div>
             
           </div>
         </section>
